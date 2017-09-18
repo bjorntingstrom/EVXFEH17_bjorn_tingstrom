@@ -142,10 +142,9 @@ aside > span {
 /* Exempel på använding av "Adjacent sibling selector" - Denna selector används när du vill markera varje tagg 
 som kommer efter en specifik tagg, där båda taggarna har samma föräldrer.  */
 
-/* eftersom mina rubriker ligger i en <ul> kunde jag inte skriva h2+h3
-utan var tvungen att specificera att listelementet som alltid kommer efter första 
-listelementet ska selectas. ALT:   */
-.logo ul li + li  {        
+/* eftersom mina rubriker ligger i en <ul> är det enkelt att använda first-of-type för att markera den första listan   */
+
+.logo ul li:first-of-type + li  {        
     color: #99CD30;
     text-align: left;
 }
@@ -154,6 +153,31 @@ listelementet ska selectas. ALT:   */
 som kommer direkt efter en föregående tagg, där båda taggarna delar samma föräldrer. Ex. alla länkar som finns
 inuti ett inline-element ska färgas vita om det föregås av ett annat inline inuti ett footer-element. */
 
-footer span ~ span a {
+
+
+.tel ~ .web a
+{
     color: white;
 }
+
+.syndicate:nth-of-type(1n) h1
+{
+    background-color: yellowgreen;
+
+}
+
+.syndicate:nth-of-type(1n) header
+{
+    background-color: #2B390F;
+
+}
+
+
+/* Om ett element finns inuti ett annat element måste du specificera det elementet annars sker ingenting! 
+I expemplet ovan måste vi skriva web a för att länkarna ska bli markerade. Gör vi inte det, sker ingenting
+eftersom span elementet inte innehåller någon faktiskt text - det är länkarna som gör det! 
+
+Om du döper alla klasser till samma namn blir de ett block? Däremot blir inte h1 det. 
+
+*/
+
