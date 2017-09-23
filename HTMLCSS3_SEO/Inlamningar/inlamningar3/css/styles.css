@@ -1,0 +1,297 @@
+ /* Universal selector - Om standardinställningar inte kan läsas in, används inställningar nedan.*/
+
+ * {
+    font-family: Merriweather;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;      /* Detta innebär att ingen/inga divs kan bli större än den största behållaren?  */
+    
+    }
+
+/* ALLA typ selectors - formaterar alla element inom den typen */
+
+body{
+    background-color: #e9967e;
+    max-width: 100%;        /* hindrar att inga element i behållaren blir större än 800px */
+    margin: auto;    
+}
+
+ul {
+    list-style-type: none;               /* tar bort prickar framför listor*/
+}
+
+article {
+    background-color: slategrey;
+    margin: 1em;
+    text-align: left;
+    }
+
+aside {
+    background-color: pink;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    margin-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+/*Dold checkbox som aldrig visas*/
+#nav-toggle {
+    display: none;
+  }
+
+  /* ----------------------HÄR BÖRJAR MOBILE NAV ------------------------ 
+  Allt här under kommer synas i mobile versionen ----------------------- /* 
+
+/*Men som används för att dölja och visa menyn på mobilen*/
+#nav-toggle:checked + #wrapper nav {        /* + används för att koppla samman ett element som redan är stängt */
+    display: block;
+  }
+
+/*Menyn döljs på mobilen som default*/
+nav {
+    display: none;	
+    text-transform: uppercase;
+  }
+
+
+  nav a{
+	display:block;
+	text-decoration: none;
+	font-family: merriweather;
+	font-weight: bold;
+	font-size:10pt;
+	color:#112233; 
+}
+nav a:hover{
+	background:#223433;
+	color:#f0f1f5;
+}
+nav ul{
+	list-style: none;
+  opacity:0.8; 
+}
+nav ul li{
+    background:skyblue;
+    line-height: 40px;          /* ökar avståndet mellan rader */
+    padding-left:50px;          /* Gör att varje listelement får en "indent" med 50px */
+  }
+
+  /*Den första undermenyn färgläggs lite annorlunda på mobilen för att kunna skiljas från övre li*/
+nav ul li ul li a{
+    color:yellow;
+  }
+
+  /*Den andra undermenyn färgläggs lite annorlunda på mobilen för att kunna skiljas från övre li*/
+nav ul ul li ul a{
+    color:white;
+  }
+
+   /* ----------------------HÄR SLUTAR MOBILE NAV ------------------------ 
+  Allt här under kommer synas i mobile versionen ----------------------- /* 
+ /* ALLA class selectors - formaterar den specificerade klassen */
+
+.logo {
+    text-align: left;
+}
+
+.next {
+    text-align: left;
+}
+
+.clearfix:after {
+    display: block;
+    clear: both;
+}
+
+  /* Formatering av ARTIKEL-element */
+  .syndicate {
+    border-bottom: 3px solid purple;
+    }
+    
+    article p {
+        color: whitesmoke;
+        padding: 0.5em;
+        margin-bottom: 0.5em;
+    }
+    
+    article header {
+        text-align: center;
+        padding: 0.5em;
+        color: purple;
+    }
+    
+    article footer {
+        color: whitesmoke;
+        padding: 0.5em;
+        margin-bottom: 0.5em;
+        text-align: left;
+    }
+    
+      /* Formatering av aside-element */
+    aside ul li {
+        margin: 0.5em;      /* ökar avståndet från länkar till artikel?? */
+        padding: 0.5em;     /* ????  */
+    }
+        
+    .blogsummary a:hover {       /* detta skulle kunna ersättas med aside a:hover eftersom den enda länkarna 
+                                i aside-element är de vi vill färga. */
+        color: red;             
+    }
+    
+     /* Exempel på användning av pseudo-class selector */
+     a:link {
+        text-decoration: none;       /* tar bort <u> på alla länkar */
+         }
+    
+    /* Exempel på använding av "Child selector" - Denna selector används när du vill markera alla taggar som återfinns 
+    inom ett visst element. Ex. alla inline-element som finns i en aside ska färgas gula.  */
+    
+    aside > span {
+        color: yellow;
+    }
+    
+    /* Exempel på använding av "Adjacent sibling selector" - Denna selector används när du vill markera varje tagg 
+    som kommer efter en specifik tagg, där båda taggarna har samma föräldrer.  */
+    
+    /* eftersom mina rubriker ligger i en <ul> är det enkelt att använda first-of-type för att markera den första listan   */
+    
+    .logo ul li:first-of-type + li  {        
+        color: #99CD30;
+        text-align: left;
+    }
+    
+    /*Exempel på använding av "General sibling selector" - Denna selector används när du vill markera alla element 
+    som kommer direkt efter en föregående tagg, där båda taggarna delar samma föräldrer. Ex. alla länkar som finns
+    inuti ett inline-element ska färgas vita om det föregås av ett annat inline inuti ett footer-element. */
+
+
+
+    .tel ~ .web a
+    {
+        color: white;
+    }
+    
+    .syndicate:nth-of-type(1n) h1
+    {
+        background-color: yellowgreen;
+    
+    }
+    
+    .syndicate:nth-of-type(1n) header
+    {
+        background-color: #2B390F;
+    
+    }
+
+
+/* -------------------HÄR BÖRJAR desktop navigationen. Allt här under staljar desktop meny ONLY!! ---- */
+
+@media all and (min-width: 630px){
+    /*Tecknet för mobil menyn döljs på desktop*/
+      label{
+        display:none;
+      }
+
+.mainlist
+{
+display: block;
+height: 40px;
+width: 800px;
+position: fixed;
+left: 50%;
+transform: translate(-50%, 0);
+background-color: #333
+}
+/* Nu skapar vi vår meny. Första steget är att se till att den förblir horisontell */
+
+.mainlist ul li {
+    float: left;  
+    height: 40px;
+    width: 200px;
+    line-height: 40px;
+    text-align: center; 
+    background: #333;
+    text-transform: lowercase;
+    padding: 0px;
+}
+
+.mainlist > ul > li > ul > li:last-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+
+/* döljer dropdown */
+.mainlist ul ul li {
+    display: none;
+    position: relative;         /* positionen sätts relativt till sin föräldrar */
+
+}
+
+/*döljer submeny */
+.mainlist ul ul ul {
+    display: none;
+}
+
+/* visar dropdown när du hovrar över ul li */
+.mainlist ul li:hover ul li {
+    display: block;
+}
+
+/* visar submenyn när du hovrar över submenyn */
+.mainlist ul ul li:hover ul {
+    display: block;
+    position: absolute;
+    top: 0%;
+    width: 200px;
+    left: 200px;
+}
+
+/* Formatering av NAVs länkar */
+    /* PADDING = ökar området runt själva innehållet, i det här fallet länkarna */
+    /* MARGIN = ökar området runt själva elementet. Alltså länkarna inklusive padding+border */
+.mainlist a {
+    color: white;         
+}
+
+.mainlist li:hover {
+color: #555;
+background: purple;   
+}
+
+nav a:hover {
+    background: purple;
+}
+
+.item {
+    position: relative;
+    left: 16px;
+}
+
+.radius {
+    position: relative;
+    left: 50px;
+    padding: 10px;
+    color: yellowgreen;
+    background: black;
+    border: solid 1px purple;
+    border-radius: 10px;
+}
+
+}           /*  ------- Här avslutas desktop NAV delen ----- */
+
+
+
+
+/* Om ett element finns inuti ett annat element måste du specificera det elementet annars sker ingenting! 
+I expemplet ovan måste vi skriva web a för att länkarna ska bli markerade. Gör vi inte det, sker ingenting
+eftersom span elementet inte innehåller någon faktiskt text - det är länkarna som gör det! 
+
+Om du döper alla klasser till samma namn blir de ett block? Däremot blir inte h1 det. 
+
+*/
+
