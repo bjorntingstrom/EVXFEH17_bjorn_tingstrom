@@ -267,10 +267,12 @@ nav a:hover {
     background: purple;
 }
 
+/* Stajlar <span> element i menyn */
 .item {
     position: relative;
     left: 16px;
 }
+
 
 .radius {
     position: relative;

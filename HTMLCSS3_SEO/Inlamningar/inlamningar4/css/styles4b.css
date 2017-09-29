@@ -1,0 +1,373 @@
+ /* Universal selector - Om standardinställningar inte kan läsas in, används inställningar nedan.*/
+
+ * {
+    font-family: Merriweather;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;      /* Detta innebär att ingen/inga divs kan bli större än den största behållaren?  */
+    }
+
+    .wrapper {
+        width: 100%;
+        margin: 0 auto;
+
+    }
+
+    /* ##### Toggle funktion for meny ###### */
+
+/*Dold checkbox som aldrig visas*/
+#nav-toggle {
+    display: none;
+  }
+
+     /* + används för att koppla samman 
+     ett element som redan är stängt */
+  #nav-toggle:checked + .wrapper nav {     
+    display: block;
+  }
+
+/*Menyn döljs på mobilen som default*/
+nav {
+    display: none;	
+  }
+
+/* #### TOGGLE-MENY #####v*/
+.meny {
+    margin: 5px;
+    font-size: 16pt;
+}
+
+.meny:before {
+    content: "\f150";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #000;
+    font-size: 24px;
+    margin: 15px;
+}
+
+label {
+    display: block;
+    background-color: lightblue;
+    padding: 10px;
+}
+
+/* #### LOGO-RAD #### */
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    align-items: baseline;
+}
+
+.logo i:nth-of-type(1) {
+    color: red;
+    margin-right: 10px;
+    font-size: 40pt;
+}.logo i:nth-of-type(2){
+    color: #8AD9F1;
+    margin-right: 10px;
+    font-size: 40pt;
+}.logo i:nth-of-type(3){
+    color: #532323;
+    margin-right: 10px;
+    font-size: 40pt;
+}.logo i:nth-of-type(4){
+    color: #FFEE00;
+    margin-right: 10px;
+    font-size: 40pt;
+}
+
+/* PROBLEM!!!!!!!!!!! */
+.mamma {
+    font-size: 45pt;
+    margin-right: 10px;
+}
+
+.my_logo {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    
+    
+}
+
+    /* ########## NAV_MENY ########## */
+
+    nav ul {
+        list-style-type: none;
+        padding: 0px;
+        margin: 0px;
+        border-bottom: 2px black solid;
+    }
+
+    nav li {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+    
+
+    nav a {
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+        color: white;
+        text-align: center;
+
+    }
+
+    input {
+        margin-right: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+
+    input:first-child {
+        background-color: orange;
+    }
+
+
+    nav ul li:first-child {
+        display: flex;
+        justify-content: center;  
+    }
+
+
+
+    nav li:nth-child(1) {
+        background-color: yellowgreen;
+    }
+    nav li:nth-child(2) {
+        background-color: #9C6F1A;
+    } nav li:nth-child(3) {
+        background-color: #CD3232;
+    } nav li:nth-child(4) {
+        background-color: #5D5CC4;
+    } nav li:nth-child(5) {
+        background-color: #CD32B3;
+    }  nav li:nth-child(6) {
+        background-color: #5C193A;
+        
+    }
+
+    i:first-of-type {
+        margin-right: 5px;
+        margin-left: 5px;
+        color: black;
+        }
+
+    nav a:hover {
+        background-color: #555;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    /* #### NU börjar vi stajla CONTAINER! ##### */
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+  }  
+  
+
+  /* >>>> Sidebar <<<<<<<< */
+.side {
+  flex: 25%;
+background-color: #4D577A;
+order: 1;  
+  }
+
+.sidebar {
+    margin: 10px;
+    color: white;
+}
+
+.sidebar h2 {
+    margin-bottom: 10px;
+}
+
+ /* >>>> Section <<<<<<<< */
+  section {
+ flex: 75%;
+ display: flex;
+ flex-direction: column;
+ width:100%
+
+  }
+  
+.baseline {
+    display: flex;
+    align-items: baseline;
+    margin: 30px;
+    margin-bottom: 0px;
+  
+  }
+  
+  .content p {
+    margin: 30px;
+  }
+
+    /* #### DAGS ATT STAJLA ARTIKLAR ##### */
+    .bilder {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 30px;
+      }
+
+.bilder article:nth-of-type(1) {
+    width: 100%;
+    background-color: #A6CEA6;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.bilder article:nth-of-type(2) {
+    width: 100%;
+    background-color: #B7E6F1;
+   padding: 10px;
+   display: flex;
+   flex-direction: column;
+    }
+
+.bilder article:nth-of-type(3) {
+    width: 100%;
+    background-color: #A36969;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+        }
+
+  /* Centrerar bilder i Artiklar (tog bort <fig> text för att göra img till ett flex-item) */ 
+  .bilder .syndicate .articleheader .bodytext {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    
+  }
+
+.title {
+    font-size: 120%; 
+    font-weight: 700; 
+}
+
+   .meta_info {
+    display: flex;
+    justify-content: space-between;
+  }
+ 
+  .bilder .meta_info i span  {
+    padding: 10px;
+    
+}
+
+  .bilder .syndicate .articlefooter button {
+    background: #6892DF;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .bilder .syndicate .articlefooter button i {
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+    color: white;
+  }
+
+  .sektion img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .bodytext p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  /* Vi måste ange flex-grow för att se till våra paragrafer tar upp lika stort utrymme. */
+  .bilder .syndicate .articleheader {
+      flex: 1; 
+  }
+
+/* #### Stajling efter artiklar ###### */
+ 
+  
+hr { 
+    border: 1px solid #706464;
+    width: 80%;
+    margin: 0 auto;
+}
+
+  .underst {
+    margin: 30px;
+  }
+  
+  .copy {
+      display: flex;
+      justify-content: center;
+  }
+
+
+
+    /* ##### DESKTOP VERSION ##############  */
+    @media screen and (min-width: 760px) {
+        
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+label {
+    display: none;
+}
+
+nav {
+    display: block;
+}
+
+/* ###### Återställning av NAV */
+.logo {
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav li {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+/* ##### Flexbox Media Queries ######### */
+.container {
+    flex-flow: row;
+}
+
+.side {
+    order: 0;
+}
+
+.bilder article:nth-of-type(1) {
+    width: 50%;
+}
+
+.bilder article:nth-of-type(2) {
+    width: 50%;
+}
+
+nav li:nth-child(1) {
+    order: 1;
+}
+
+    }

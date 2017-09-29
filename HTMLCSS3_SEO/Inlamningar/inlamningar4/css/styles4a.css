@@ -1,0 +1,287 @@
+ /* Universal selector - Om standardinställningar inte kan läsas in, används inställningar nedan.*/
+
+ * {
+  font-family: Merriweather;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;      /* Detta innebär att ingen/inga divs kan bli större än den största behållaren?  */
+  }
+
+  .wrapper {
+      width: 100%;
+      margin: 0 auto;
+
+  }
+
+  body {
+    background: #BBEEEE
+  }
+
+  /* ##### Toggle funktion for meny ###### */
+
+/*Dold checkbox som aldrig visas*/
+#nav-toggle {
+  display: none;
+}
+
+   /* + används för att koppla samman 
+   ett element som redan är stängt */
+#nav-toggle:checked + .wrapper nav {     
+  display: block;
+}
+
+/*Menyn döljs på mobilen som default*/
+nav {
+  display: none;	
+}
+
+/* #### TOGGLE-MENY #####v*/
+.meny {
+  margin: 5px;
+  font-size: 16pt;
+}
+
+.meny:before {
+  content: "\f150";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  color: #000;
+  font-size: 24px;
+  margin: 15px;
+}
+
+label {
+  display: block;
+  background-color: lightblue;
+  padding: 10px;
+}
+
+
+  /* ########## NAV_MENY ########## */
+
+  nav ul {
+      list-style-type: none;
+      padding: 0px;
+      margin: 0px;
+      opacity:0.8; 
+      
+  }
+
+nav ul li ul li{
+    background:skyblue;
+    
+    padding-left:50px;          /* Gör att varje listelement får en "indent" med 50px */
+  }
+
+  /*Den första undermenyn färgläggs lite annorlunda på mobilen för att kunna skiljas från övre li*/
+nav ul li ul li a{
+    color:yellow;
+  }
+
+  /*Den andra undermenyn färgläggs lite annorlunda på mobilen för att kunna skiljas från övre li*/
+nav ul ul li ul a{
+    color:white;
+  }
+
+
+
+  nav a {
+      text-decoration: none;
+      display: block;
+      padding: 10px;
+      text-align: center;
+      font-family: merriweather;
+      color: white;
+      font-weight: bold;
+      font-size:10pt;
+      background-color: #112233;
+
+  }
+
+
+  nav a:hover {
+      background-color: #555;
+      color: white;
+      
+  }
+
+  
+  .dropdown {
+    display: none;
+  }
+  
+  nav ul li:hover .dropdown {
+    display: block;
+  }
+  
+  .dropdropdown {
+    display: none;
+  }
+  
+  nav ul li ul li:hover .dropdropdown {
+    display: block;
+  }
+
+  /* #### DAGS ATT STAJLA ARTIKLAR ##### */
+  .bilder {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 30px;
+    }
+
+
+/* Varje bildartikel är en egen flex */
+
+.bilder article:nth-of-type(1) {
+  width: 100%;
+  background-color: #A6CEA6;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  
+}
+
+.bilder article:nth-of-type(2) {
+  width: 100%;
+  background-color: #B7E6F1;
+ padding: 10px;
+ display: flex;
+ flex-direction: column;
+  }
+
+.bilder article:nth-of-type(3) {
+  width: 100%;
+  background-color: #A36969;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+      }
+
+  /* Centrerar bilder i Artiklar (tog bort <fig> text för att göra img till ett flex-item) */ 
+  .bilder .syndicate .articleheader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+.title {
+  font-size: 120%; 
+  font-weight: 700; 
+}
+
+ .meta_info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bilder .meta_info i span  {
+  padding: 10px;
+  
+}
+
+.bilder .syndicate .articlefooter button {
+  background: #6892DF;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.bilder .syndicate .articlefooter button i {
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 2.5em;
+  color: white;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.bodytext p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Vi måste ange flex-grow för att se till våra paragrafer tar upp lika stort utrymme. */
+.bilder .syndicate .articleheader {
+    flex: 1; 
+}
+
+
+  /* ##### DESKTOP VERSION ##############  */
+  @media screen and (min-width: 760px) {
+      
+nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  flex: 1 1 0;
+}
+
+/* Positionering av submeny till NAV */
+nav > ul > li > ul > li {
+  margin: 0px;
+}
+
+nav ul li ul li {
+margin-left: 0px;
+}
+
+nav ul li ul li {
+  position: relative;
+}
+
+nav ul li ul li ul {
+  position: absolute;
+  left: 100%;
+  top: -5px;
+  width: 100%;
+  
+}
+
+nav ul li ul li ul li {
+  margin: 0px;
+  margin-left: 0px;
+}
+
+/* Återställning av NAV från mobile */
+nav ul li ul li{
+  background:skyblue;
+  
+  padding-left:0px;          /* Gör att varje listelement får en "indent" med 50px */
+}
+
+
+label {
+  display: none;
+}
+
+
+nav {
+  display: block;
+  position: fixed;
+  width: 100%;
+  top: 0%;
+}
+
+
+/* ##### Flexbox Media Queries ######### */
+
+.bilder article:nth-of-type(1) {
+  width: 50%;
+   
+}
+
+.bilder article:nth-of-type(2) {
+  width: 50%;
+}
+
+  }
