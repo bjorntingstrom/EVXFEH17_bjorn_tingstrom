@@ -1,0 +1,419 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  position: relative;
+}
+
+    
+/*--------------------------------------------------------------
+Typography
+--------------------------------------------------------------*/
+body {
+  counter-reset: numImg;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+/*--------------------------------------------------------------
+General styling  (behöver jag verkligen detta senare??)
+--------------------------------------------------------------*/
+img {
+  display: box;
+  border: 0;
+  width: 100%;
+  height: auto;
+}
+
+/*-----------------------------------------------------------
+    Toggle funktion for meny 
+-------------------------------------------------------------*/
+
+/*Dold checkbox som aldrig visas*/
+#nav-toggle {
+  display: none;
+}
+
+#nav-toggle:checked + .wrapper nav {
+  display: block;
+}
+
+/*Menyn döljs på mobilen som default*/
+nav {
+  display: none;
+}
+
+/* #### TOGGLE-MENY #####v*/
+.click {
+    margin: 5px;
+    font-size: 16pt;
+  }
+
+.click:before {
+  content: "\f150";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  color: #000;
+  font-size: 24px;
+  margin: 15px;
+}
+
+label {
+  display: block;
+  background-color: #F0E5E5;
+  padding: 10px;
+}
+/*--------------------------------------------------------------
+Meny:
+--------------------------------------------------------------*/
+
+.wrapper {
+    background-image: url("https://previews.123rf.com/images/molka/molka1601/molka160100040/52007809-Fresh-homemade-croissants-with-chocolate-Stock-Photo-croissant-chocolate.jpg");
+    background-size: cover;
+    background-position-x: 90%;
+    background-position-y: 90%;
+}
+
+h2 {
+  font-family: "Croissant one";
+  font-size: 28pt;
+  padding: 1em;
+  color: whitesmoke;
+}
+
+nav {
+  font-family: "Croissant one";
+}
+
+nav ul {
+  padding: 0px;
+  background-color: #F0E5E5;
+  
+}
+
+nav a {
+    display: block;
+    margin: 0 0;
+    padding: 10px;
+    color: #0e0101;
+    text-align: left;
+  }
+
+.submeny {
+    padding: 0 50px;
+}
+
+.subsubmeny {
+    padding: 0 50px;
+}
+
+.divisor {
+    display: none;
+  }
+
+
+/*--------------------------------------------------------------
+Cards:
+--------------------------------------------------------------*/
+
+.cards {
+  max-width: 100%;
+  margin: 1em auto;
+  padding: 0;
+  list-style-type: none;
+}
+
+ /*--------------------------------------------------------------
+Stajling av länkar (röda boxar)
+--------------------------------------------------------------*/
+figcaption a {
+    color: #F0D344;
+    text-decoration: underline;
+    font-family: "Croissant one"; 
+  }
+
+  figcaption {
+    background: #932e26;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 2rem;
+    padding: 1rem 1rem 1rem 4.5rem;
+    font-weight: 10%;
+    line-height: 1.5;
+    color: #fff;
+    font-family: "Croissant one";
+    font-size: 0.8rem;      /* fungerar för att ändra font-size med!!!! */
+  }
+
+  .cards a {
+    display: inline-block;
+    margin-bottom: 0em;
+    border-top: 0px solid black;
+  }
+
+    /*--------------------------------------------------------------
+Stajling av bilder inklusive bildtext
+--------------------------------------------------------------*/
+img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    box-shadow: 0 0 3px #496b7b;
+    border-radius: 5px;
+  }
+
+  figure::after {
+    background: rgba(0, 0, 0, 0.5);
+    content: counter(numImg); /* lägger till en siffra i ena hörnet */
+    counter-increment: numImg;
+
+    position: absolute;
+    top: 0%;
+    left: 0;
+    font-size: 2rem;
+    color: #c6d9d3;
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+  }
+
+/*--------------------------------------------------------------
+Footer
+--------------------------------------------------------------*/
+.social {
+    margin: 1em 0;
+    text-align: center;
+}
+
+  .social i {
+    margin-right: 5px;
+    margin-left: 5px;
+    color: black;
+    font-size: 25pt;
+  }
+  
+.tags {
+    display: none;
+}
+
+nav img {
+    display: none;
+}
+/*--------------------------------------------------------------
+CSS Grid layout for tablet:
+--------------------------------------------------------------*/
+@media screen and (min-width: 500px) {
+
+   
+    #nav-toggle:checked + .wrapper nav {
+        display: none;
+      }
+      
+    nav {
+        display: block;
+    }
+  
+
+    .submeny {
+        display: none;
+        padding: 0px;
+    }
+
+    nav img {
+        max-width: 50px;
+        max-height: 50px;
+        border: 0px solid white;
+        margin-bottom: 10px;
+    }
+
+    .subsubmeny {
+        display: none;
+        padding: 0px;
+    }
+
+    nav ul li:hover .submeny {
+        display: block;
+       } 
+    
+      .meny {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      nav a {
+        text-align: center;
+      }
+    
+    
+      nav ul li ul li {
+        position: relative;
+      }
+    
+      nav > ul > li > ul {
+        margin-top: 5px;
+        margin-bottom: 5em;
+      }
+    
+      nav > ul > li > ul > li a {
+        padding: 5px;
+      }
+    
+      nav ul li:nth-of-type(1) ul li:hover .subsubmeny, nav ul li:nth-of-type(2) ul li:hover .subsubmeny {
+        position: absolute;
+        top: 0%;
+        left: 100%;
+      }
+    
+      nav ul li:nth-of-type(4) ul li:hover .subsubmeny, nav ul li:nth-of-type(3) ul li:hover .subsubmeny {
+        position: absolute;
+        top: 0%;
+        right: 100%;
+      }
+    
+    
+    nav ul li ul li:hover .subsubmeny {
+      display: flex;
+      flex-direction: column;
+    }
+    
+  /*--------------------------------------------------------------
+Footer-elementet
+--------------------------------------------------------------*/
+.tags {
+    display: block;
+}  
+
+footer {
+margin: 0 auto;
+background-image: url("https://previews.123rf.com/images/molka/molka1601/molka160100040/52007809-Fresh-homemade-croissants-with-chocolate-Stock-Photo-croissant-chocolate.jpg");
+background-position-x: 90%;
+background-position-y: 90%;
+background-size: cover;
+height: 100px;
+width: 100%;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+padding: 1em;
+border: 1px solid red;
+font-weight: 50%;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+color: white;
+}
+
+footer p {
+font-style: italic;
+}
+
+.social {
+  text-align: right;
+}
+
+}
+/*--------------------------------------------------------------
+CSS Grid layout for wider screens, when browser supports grid:
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 1200px) {
+  nav ul li ul {
+    display: none;
+  }
+
+  .subsubmeny {
+    display: none;
+  }
+
+  h2 {
+    color: whitesmoke;
+  }
+
+  nav a {
+    color: #080808;
+  }
+
+ .wrapper {
+    border-left: 10px double #932e26;
+    border-right: 10px double #932e26;
+    border-bottom: 10px double #932e26;
+    width: 90%;
+    margin: 0 auto;
+    background-clip: padding-box;
+}
+
+
+
+  section {
+    border-left: 10px double #932e26;
+    border-right: 10px double #932e26;
+    border-bottom: 10px double #932e26;
+    width: 90%;
+    margin: 0 auto;
+    background-clip: padding-box;
+  }
+
+  /*
+  KLISTA IN MENY HÄRRRR */
+
+  /*--------------------------------------------------------------
+CSS Grid LAYOUT
+--------------------------------------------------------------*/
+
+  .cards {
+    border: 1px solid red;
+    padding: 1em;
+    max-width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+
+    /*grid-auto-flow: dense; */
+  }
+
+  .cards li:nth-of-type(5) {
+    grid-column: 2/4;
+    grid-row: 1/3;
+  }
+
+  .cards li:nth-of-type(7) {
+    grid-column: span 2;
+  }
+
+  .cards li:nth-of-type(11) {
+    grid-row: span 2;
+  }
+
+  .cards li:nth-of-type(9) {
+    grid-column: span 3;
+  }
+
+  .cards li:nth-of-type(10) {
+    grid-column: span 3;
+  }
+
+  .card {
+    border: 1px solid red;
+    padding: 1em;
+  }
+
+ 
+footer {
+    width: 90%;
+}
+
+
+
+
+}

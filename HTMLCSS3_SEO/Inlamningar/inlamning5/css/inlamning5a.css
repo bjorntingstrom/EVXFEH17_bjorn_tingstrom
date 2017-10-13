@@ -1,0 +1,336 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    position: relative;
+  }
+  
+      
+  /*--------------------------------------------------------------
+  Typography
+  --------------------------------------------------------------*/
+  body {
+    counter-reset: numImg;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  ul li {
+    list-style-type: none;
+  }
+  
+  /*--------------------------------------------------------------
+  General styling  (behöver jag verkligen detta senare??)
+  --------------------------------------------------------------*/
+  img {
+    display: block;
+    border: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  nav img {
+      display: none;
+  }
+  
+  /*-----------------------------------------------------------
+      Toggle funktion for meny 
+  -------------------------------------------------------------*/
+  
+  /*Dold checkbox som aldrig visas*/
+  #nav-toggle {
+    display: none;
+  }
+  
+  #nav-toggle:checked + .wrapper nav {
+    display: block;
+  }
+  
+  /*Menyn döljs på mobilen som default*/
+  nav {
+    display: none;
+  }
+  
+  /* #### TOGGLE-MENY #####v*/
+  .click {
+      margin: 5px;
+      font-size: 16pt;
+    }
+  
+  .click:before {
+    content: "\f150";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #000;
+    font-size: 24px;
+    margin: 15px;
+  }
+  
+  label {
+    display: block;
+    background-color: #F0E5E5;
+    padding: 10px;
+  }
+  /*--------------------------------------------------------------
+  Meny:
+  --------------------------------------------------------------*/
+  
+  .wrapper {
+      background-image: url("https://cdn.shopify.com/s/files/1/1117/3494/files/Group-of-dogs-sitting-against-white-background-000021142304_Large_7c0d4dfc-a514-48a2-b7bb-46fd975306a7.png?v=1487794010");
+      background-size: cover;
+      background-position-x: 10%;
+      background-position-y: 20%;
+    
+  }
+  
+  h2 {
+    font-family: "Croissant one";
+    font-size: 28pt;
+    padding: 2em 1em;
+    color: #110101;
+  }
+  
+  nav {
+    font-family: "Croissant one";
+  }
+  
+  nav ul {
+    padding: 0px;
+    background-color: #F0E5E5;
+    
+  }
+  
+  nav a {
+      display: block;
+      margin: 0 0;
+      padding: 10px;
+      color: #0e0101;
+      text-align: left;
+    }
+  
+  .submeny {
+      padding: 0 50px;
+  }
+  
+  .subsubmeny {
+      padding: 0 50px;
+  }
+  
+  .divisor {
+      display: none;
+    }
+
+
+
+/*--------------------------------------------------------------
+Cards:
+--------------------------------------------------------------*/
+
+.cards {
+	max-width: 25em;
+	margin: 1em auto;
+	padding: 0;
+	list-style-type: none;
+
+}
+
+.cards a {
+	display: block;
+	margin-bottom: 1em;
+    text-decoration: none;
+    height: 100%;
+}
+
+.caption {
+	padding: 1em;
+	font-size: 90%;
+	color: black;
+}
+
+.caption-title {
+	margin: 0;
+	font-size: 1.4em;
+	line-height: 1em;
+}
+
+.caption p {
+	margin-top: .5em;
+	margin-bottom: 0;
+}
+
+.cards a:focus .caption,
+.cards a:hover .caption {
+	background: hsl(0, 0%, 97%);
+}
+
+
+/*--------------------------------------------------------------
+CSS Grid layout for wider screens, when browser supports grid:
+--------------------------------------------------------------*/
+@supports (grid-area: auto) {
+    
+    @media screen and (min-width: 27em) {
+
+         
+    #nav-toggle:checked + .wrapper nav {
+        display: none;
+      }
+      
+    nav {
+        display: block;
+    }
+  
+
+    .submeny {
+        display: none;
+        padding: 0px;
+    }
+
+    nav img {
+        max-width: 50px;
+        max-height: 50px;
+        border: 0px solid white;
+        margin-bottom: 10px;
+    }
+
+    .subsubmeny {
+        display: none;
+        padding: 0px;
+    }
+
+    nav ul li:hover .submeny {
+        display: block;
+       } 
+    
+      .meny {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      nav a {
+        text-align: center;
+      }
+    
+    
+      nav ul li ul li {
+        position: relative;
+      }
+    
+      nav > ul > li > ul {
+        margin-top: 5px;
+        margin-bottom: 5em;
+      }
+    
+      nav > ul > li > ul > li a {
+        padding: 5px;
+      }
+    
+      nav ul li:nth-of-type(1) ul li:hover .subsubmeny, nav ul li:nth-of-type(2) ul li:hover .subsubmeny {
+        position: absolute;
+        top: 0%;
+        left: 75%;
+      }
+    
+      nav ul li:nth-of-type(4) ul li:hover .subsubmeny, nav ul li:nth-of-type(3) ul li:hover .subsubmeny {
+        position: absolute;
+        top: 0%;
+        right: 75%;
+      }
+
+      nav ul li ul li:hover .subsubmeny {
+        display: flex;
+        flex-direction: column;
+      }
+
+        .cards {
+            padding: 1em;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        .card {
+            display: grid;
+            grid-template-columns: 8em auto;
+            margin: 1em 0;
+            padding: .5em;
+        }
+
+        .cards a:focus,
+        .cards a:hover {
+            outline: 1px solid hsl(0, 0%, 80%);
+        }
+
+        /* -----DENNA BEHÖVS INTE (eftersom vi har angivit att första kolonnen enbart får vara 8EM!----
+        .card img {
+            max-width: 300px;
+        }
+
+        .card .caption {   
+        }
+        */ 
+    }
+
+    @media screen and (min-width: 60em) {
+
+        .cards {
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns: 25em 25em;
+            padding: 1em;
+            
+          
+            width: 52em;            /* Utan att ange en begränsning i bredd fortsätter texten att växa till höger, vilket gör att bilden inte centreras */
+        }
+
+        .cards li:nth-of-type(1) {
+            grid-row: 1/4;
+            grid-column: 1/2;
+            
+            
+        }
+        .cards li:nth-of-type(1) .card {
+            display: flex;
+            flex-direction: column;
+            
+
+        }
+
+        .cards li:nth-of-type(2) {
+            grid-row: 5/8;
+            grid-column: 2/3;
+            
+        }
+        .cards li:nth-of-type(2) .card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .caption  {
+        
+            height: 100%;
+            margin-top: 0px;
+        }
+        
+
+        .card {
+         
+            height: 100%;
+            margin: 0 auto;
+        
+        }
+
+        .cards a {
+         
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        
+
+    }
+
+}
