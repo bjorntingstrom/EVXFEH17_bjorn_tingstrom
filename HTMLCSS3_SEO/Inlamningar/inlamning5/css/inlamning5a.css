@@ -27,7 +27,7 @@
     display: block;
     border: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
   }
 
   nav img {
@@ -83,14 +83,17 @@
       background-size: cover;
       background-position-x: 10%;
       background-position-y: 20%;
-    
+     
   }
   
   h2 {
     font-family: "Croissant one";
+    text-shadow: 2px 2px 8px #0A0000;
     font-size: 28pt;
     padding: 2em 1em;
-    color: #110101;
+    color: #FAF5F5;
+    
+    display: block;
   }
   
   nav {
