@@ -1,0 +1,344 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Merriweather+Sans);
+.models a button {
+  display: inline-block;
+  background: #666;
+  border-radius: 5px;
+  border-style: double;
+  color: #faf4f4;
+  text-decoration: none;
+  padding: 5px;
+  font-family: "Poiret One", cursive;
+  font-size: 11pt; }
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  font-family: "Poiret One";
+  margin: 0 auto; }
+
+ul {
+  list-style-type: none; }
+
+a {
+  text-decoration: none; }
+
+.models {
+  position: relative;
+  width: 100%;
+  margin: 10px; }
+  .models img:first-of-type {
+    margin-top: 10px;
+    width: 100%;
+    height: 100%; }
+  .models h2 {
+    text-align: center;
+    text-shadow: 1px 1px #a09898;
+    color: black;
+    margin: 3px; }
+  .models p, .models img:last-of-type {
+    text-align: left;
+    padding: 5px 10px; }
+  .models span {
+    position: absolute;
+    top: 4%;
+    left: 5%;
+    text-shadow: 1px 1px #a09898; }
+  .models a button {
+    position: absolute;
+    left: 50%; }
+
+header h1 {
+  color: white;
+  background: black;
+  padding: 10px;
+  text-align: center; }
+
+header input {
+  display: none;
+  position: absolute; }
+
+header .main-toggle {
+  display: block;
+  position: relative;
+  margin: 0px;
+  padding: 0.45em;
+  line-height: 2em;
+  background: #e0e07b; }
+  header .main-toggle:after {
+    position: absolute;
+    content: "";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #0e0d0d;
+    background: #0d0e0e;
+    font-size: 18px;
+    padding: 5px;
+    margin: 10px;
+    top: -8px;
+    left: 86%;
+    background: none;
+    font-size: 20pt; }
+  @media (min-width: 40em) {
+    header .main-toggle {
+      display: none; } }
+
+header .start {
+  background: gainsboro;
+  display: none;
+  width: 100%; }
+  @media (min-width: 40em) {
+    header .start {
+      display: flex;
+      justify-content: space-around; } }
+  header .start li {
+    width: 100%;
+    text-align: center; }
+    header .start li:hover {
+      background: white; }
+    header .start li a {
+      color: black;
+      font-size: 24pt;
+      padding: 10px; }
+
+nav input:checked ~ .start {
+  display: block; }
+  @media (min-width: 40em) {
+    nav input:checked ~ .start {
+      display: flex;
+      justify-content: space-around; } }
+
+.bikes input:checked ~ ul {
+  display: block; }
+
+.bikes ul li ul {
+  display: none; }
+  @media (min-width: 40em) {
+    .bikes ul li ul {
+      display: block; } }
+
+.bikes ul li ul li a:hover, .guides ul li a:hover {
+  text-decoration: underline; }
+
+.bikes ul, .guides ul {
+  text-align: left; }
+  @media (min-width: 40em) {
+    .bikes ul, .guides ul {
+      text-align: center;
+      padding-top: 1em; } }
+
+.bikes ul li {
+  padding: 0px 0px;
+  margin: 0px;
+  text-align: left; }
+
+.bikes ul li ul li {
+  padding: 10px; }
+
+.bikes ul li a {
+  padding-left: 2.5em;
+  text-align: left;
+  font-size: 12pt; }
+
+nav ul .guides ul li a {
+  display: block;
+  padding-left: 2.5em;
+  text-align: left;
+  font-size: 12pt; }
+
+.bikes label {
+  display: block;
+  position: relative;
+  padding-left: 0em;
+  text-align: left; }
+  .bikes label:after {
+    content: "";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #0c0c0c;
+    background: #0c0c0c;
+    font-size: 18px;
+    padding: 5px;
+    margin: 10px;
+    background: none;
+    padding-left: auto;
+    position: absolute;
+    top: 0px;
+    right: 0px; }
+    @media (min-width: 40em) {
+      .bikes label:after {
+        display: none; } }
+
+.bikes input {
+  display: none; }
+
+@media (min-width: 40em) {
+  .bikes label h2 {
+    text-align: center; } }
+
+header > li {
+  position: relative;
+  padding: 0px; }
+  header > li:hover {
+    background: white; }
+
+@media (min-width: 40em) {
+  .megamenu {
+    display: none; } }
+
+.start li:hover .megamenu {
+  width: 100%; }
+  @media (min-width: 40em) {
+    .start li:hover .megamenu {
+      position: absolute;
+      z-index: 5;
+      border-bottom: 10px double black;
+      background: white;
+      display: flex;
+      flex-flow: row wrap; } }
+
+@media (min-width: 40em) {
+  .bikes {
+    flex: 80%; } }
+
+@media (min-width: 40em) {
+  .mamma {
+    display: flex; } }
+
+@media (min-width: 40em) {
+  .guides {
+    flex: 20%;
+    border-left: 2px dotted black; } }
+
+.bottom-banner {
+  position: relative; }
+  .bottom-banner img {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 5px double black; }
+  .bottom-banner figcaption {
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    left: 60%; }
+    .bottom-banner figcaption h2 {
+      text-shadow: 2px 2px #701313;
+      color: white; }
+      @media (min-width: 40em) {
+        .bottom-banner figcaption h2 {
+          font-size: 35pt; } }
+      @media (min-width: 48em) {
+        .bottom-banner figcaption h2 {
+          font-size: 50pt; } }
+    .bottom-banner figcaption h4 {
+      text-shadow: 2px 2px #701313;
+      color: white; }
+      @media (min-width: 40em) {
+        .bottom-banner figcaption h4 {
+          font-size: 20pt; } }
+      @media (min-width: 48em) {
+        .bottom-banner figcaption h4 {
+          font-size: 35pt; } }
+
+.lead-banner {
+  position: relative; }
+  .lead-banner img {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 5px double black; }
+  .lead-banner figcaption {
+    width: 100%;
+    position: absolute;
+    top: 60%;
+    left: 7%; }
+    .lead-banner figcaption h2 {
+      text-shadow: 2px 2px #701313;
+      color: white; }
+      @media (min-width: 40em) {
+        .lead-banner figcaption h2 {
+          font-size: 35pt; } }
+      @media (min-width: 48em) {
+        .lead-banner figcaption h2 {
+          font-size: 50pt; } }
+    .lead-banner figcaption h4 {
+      text-shadow: 2px 2px #701313;
+      color: white; }
+      @media (min-width: 40em) {
+        .lead-banner figcaption h4 {
+          font-size: 20pt; } }
+      @media (min-width: 48em) {
+        .lead-banner figcaption h4 {
+          font-size: 35pt; } }
+
+@media (min-width: 40em) {
+  section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); } }
+
+.social {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; }
+  .social i {
+    margin: 10px; }
+  .social i:nth-of-type(1)::after {
+    content: "";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #301a18;
+    background: #182e30;
+    font-size: 18px;
+    padding: 5px;
+    margin: 10px; }
+  .social i:nth-of-type(2)::after {
+    content: "";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #b17ec9;
+    background: #96c97e;
+    font-size: 18px;
+    padding: 5px;
+    margin: 10px; }
+  .social i:nth-of-type(3)::after {
+    content: "";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #b3cf35;
+    background: #5135cf;
+    font-size: 18px;
+    padding: 5px;
+    margin: 10px; }
+  .social i:nth-of-type(4)::after {
+    content: "";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #380ff0;
+    background: #c7f00f;
+    font-size: 18px;
+    padding: 5px;
+    margin: 10px; }
+
+.testing {
+  width: 71.42857%;
+  background: red; }

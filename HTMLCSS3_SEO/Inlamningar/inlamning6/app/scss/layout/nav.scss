@@ -1,0 +1,201 @@
+header {
+  h1 {
+    color: white;
+    background: black;
+    padding: 10px;
+    text-align: center;
+  }
+
+  input {
+    display: none;
+    position: absolute;
+  }
+
+  .main-toggle {
+    display: block;
+    position: relative;
+    margin: 0px;
+    padding: 0.45em;
+    line-height: 2em;
+    background: rgb(224, 224, 123);
+    &:after {
+      position: absolute;
+      @include icon(bars, rgb(14, 13, 13));
+      top: -8px;
+      left: 86%;
+      background: none;
+      font-size: 20pt;
+    }
+    @include respond-to(small) {
+      display: none;
+    }
+  }
+
+  .start {
+    background: darken($color: $light, $amount: 10);
+    display: none;
+    width: 100%;
+    @include respond-to(small) {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    
+
+li {
+      width: 100%;
+      
+      text-align: center;
+      &:hover {
+        background: white;
+      }
+       a {
+        color: black;
+        font-size: 24pt;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+/// Även om knappen är ifylld ska menyn inte påverkas i desktop version
+nav input:checked ~ .start {
+  display: block;
+  @include respond-to(small) {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.bikes input:checked ~ ul {
+  display: block;
+}
+
+///Hide submeny i mobil, men visar alltid menyn i desktop! 
+
+.bikes ul li ul {
+  display: none;
+  @include respond-to(small) {
+    display: block;
+  }
+}
+
+
+
+///text-decoration för länkar i megamenu
+.bikes ul li ul li a, .guides ul li a {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+///Styling av megamenu 
+.bikes ul, .guides ul {
+  text-align: left;
+  @include respond-to(small) {
+    text-align: center;
+    padding-top: 1em;
+  }
+}
+
+.bikes ul li {
+  padding: 0px 0px;
+  margin: 0px;
+  text-align: left;
+  
+}
+
+.bikes ul li ul li {
+  padding: 10px;
+}
+
+.bikes ul li a {
+  padding-left: 2.5em;
+  text-align: left;
+  font-size: 12pt;
+}
+
+
+nav ul .guides ul li a  {
+  display: block;
+  padding-left: 2.5em;
+  text-align: left;
+  font-size: 12pt;
+  @include respond-to(small) {
+   
+  }
+}
+
+///toggle funktion av meegamnu
+.bikes label {
+  display: block;
+  
+  position: relative;
+  padding-left: 0em;
+  text-align: left; ///ändra på denna?
+  &:after {
+    @include icon(bars, rgb(12, 12, 12));
+    background: none;
+    padding-left: auto;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    @include respond-to(small) {
+      display: none;
+    }
+  }}
+ 
+  
+ 
+.bikes input {
+  display: none;
+}
+
+.bikes label h2 {
+  @include respond-to(small) {
+  text-align: center;}
+}
+
+header > li {
+  position: relative;
+  padding: 0px;
+  &:hover {
+    background: white;
+  }
+}
+
+.megamenu {
+  @include respond-to(small) {
+  display: none;}
+}
+
+.start li:hover .megamenu {
+  width: 100%;
+  @include respond-to(small) {
+  position: absolute;
+  z-index: 5;
+  border-bottom: 10px double black;
+  background: white;
+  display: flex;
+  flex-flow: row wrap;}
+}
+
+///Adjust for screen-size!
+.bikes {
+  @include respond-to(small) {
+flex: 80%;}
+}
+
+.mamma {
+  @include respond-to(small) {
+    display: flex;
+    
+  }
+}
+
+.guides {
+  @include respond-to(small) {
+  flex: 20%; 
+  border-left: 2px dotted black;}
+}
+

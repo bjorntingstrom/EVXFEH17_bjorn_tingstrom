@@ -1,0 +1,29 @@
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Merriweather+Sans);
+
+///Color map
+
+    $light: #f5f5f5;
+    $dark: #282828;
+    $darkgrey: #666;
+
+
+/// Breakpoint map
+
+$breakpoints: (
+    'small':  ( min-width:  40.000em ),
+    'medium': ( min-width:  48.000em ),
+    'large':  ( min-width: 62.000em ),
+    'wide':  ( min-width: 75.000em )
+  ) !default;
+  
+
+     ///Social icon map
+$social: (
+    "twitter": "\f081",
+    "facebook": "\f082",
+    "instagram": "\f16d",
+    "youtube": "\f167",
+    "bars": "\f0c9"
+)

@@ -1,0 +1,10 @@
+
+
+.bottom-banner {
+    @include banner(10%, 60%);
+}
+
+.lead-banner {
+    @include banner(60%, 7%);
+}
+
