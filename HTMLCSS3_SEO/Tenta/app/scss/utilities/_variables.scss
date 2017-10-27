@@ -14,6 +14,7 @@ $text: (
 ) !default;
 
 
+
 /// COLORS map
 $color: (
   main: #24d4a0,
@@ -51,4 +52,13 @@ $breakpoints: (
   'wide':  ( min-width: 75.000em )
 ) !default;
 
+
+     ///Social icon map
+$social: (
+    "twitter": "\f081",
+    "facebook": "\f082",
+    "instagram": "\f16d",
+    "youtube": "\f167",
+    "bars": "\f0c9"
+)
 

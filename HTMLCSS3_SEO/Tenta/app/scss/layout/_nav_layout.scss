@@ -1,0 +1,131 @@
+///Toogle ikon för meny
+
+header {
+  width: 100%;
+  height: 10em;
+  background: rgb(10, 10, 10);
+  position: relative;
+    padding-top: 1.5em;
+ 
+  .toggle span:nth-of-type(1) {
+    width: 75px;
+    background: rgb(250, 249, 249);
+    display: block;
+    height: 2px;
+    padding: 1px;
+    padding-top: 10px;
+    margin-left: 1em;
+    border-radius: 7px;
+
+  }
+  .toggle span:nth-of-type(2) {
+    width: 75px;
+    background: rgb(250, 249, 249);
+    height: 2px;
+    display: block;
+    padding: 6px;
+    margin-top: 10px;
+    margin-left: 1em;
+    border-radius: 7px;
+  }
+  .toggle span:nth-of-type(3) {
+    width: 75px;
+    background: rgb(250, 249, 249);
+    height: 2px;
+    display: block;
+    padding: 6px;
+    margin-top: 10px;
+    margin-left: 1em;
+    border-radius: 7px;
+  }
+}
+
+///Själva menyn i mobil
+#navID {
+    transition: transform .3s ease-in-out;
+    top: 0;
+    bottom: 0;   
+    min-height: 100vh;
+    position: fixed; 
+    width: 300px;
+    left: -340px; 
+    background: rgb(86, 184, 230);
+    
+    
+    > a {
+        position: relative;
+        left: 80%;
+        padding: 20px;
+        font-size: 20pt;
+        color: white;
+    }
+
+    li {
+        a {
+            padding: 2px;
+            display: block;
+            font-size: 24pt;
+            color: white;
+            &:hover {
+                color: red;     ///Hover effekt på länkar
+            }
+            
+        }
+    }
+    &:target {
+        transform: translateX(340px);
+    }
+    h1 {
+        text-align: center;
+        color: white;
+        padding-top: 1.5em;
+        display: none;
+    
+    }
+}
+
+
+///Själva menyn i tablet/desktop
+header {
+    @include respond-to(small){
+    .toggle {
+    display: none;}
+    background: black;
+}
+}
+#navID {
+    @include respond-to(small) { 
+    min-height: auto;
+    position: relative;
+    width: 100%;
+    left: 0%;
+    background: rgb(1, 13, 19);
+    
+    
+    > a {
+        display: none;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        align-content: flex-end;
+    }
+
+    li {
+        a {
+            padding: 10px;
+            font-size: 24pt;
+            color: white;
+            &:hover {
+                color: red;     ///Hover effekt på länkar
+            }
+        }
+    }
+    h1 {
+        display: block;
+    
+    }
+    
+}
+}

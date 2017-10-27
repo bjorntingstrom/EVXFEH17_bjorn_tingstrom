@@ -1,0 +1,68 @@
+.main-content {
+    min-height: 100vh;
+    margin-bottom: 1em;
+    padding: 1em;
+    .portfolio
+    {  
+    @include respond-to(large) {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-gap: 20px;}
+
+    .portfolio-item {
+        padding: 1em;
+        margin-bottom:  1em;
+        display: block;
+        transition: 300ms;
+        background: black;
+        &:hover {
+            color: white;
+            text-shadow: 2px 5px 10px rgb(170, 41, 41);
+            
+        }
+
+    }
+}
+}
+
+.portfolio-item.small {
+    color: red;
+    grid-column: span 1;
+    grid-row: span 1;
+}
+.portfolio-item.medium {
+    color: rgb(141, 88, 88);
+    grid-column: span 2;
+    grid-row: span 2;
+}
+.portfolio-item.large {
+    color: rgb(46, 170, 63);
+    grid-column: span 3;
+    grid-row: span 3;
+    z-index: 10;
+}
+.portfolio-item.tall {
+    color: rgb(183, 0, 255);
+    grid-column: span 2;
+    grid-row: span 3;
+
+}.portfolio-item.wide {
+    color: rgb(229, 255, 0);
+    grid-column: span 3;
+    grid-row: span 2;
+}
+
+.portfolio-item.large.with-image {
+    position: relative;
+    background-image: url("/images/portree.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 10;
+    &:hover {
+        opacity: 0.8;
+
+    }
+    
+}
+
